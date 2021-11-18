@@ -128,7 +128,7 @@ while True:
     
     if option == 4:
         dni = readDNI()
-        print(myStudents[dni])
+        print(ctrl)
 
     if option == 5:
         print("Chao")
