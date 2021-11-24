@@ -18,12 +18,22 @@ class PatientController():
             return True
         return False
 
+
     def getPatientHistory(self, dni):
+        historyList = []
         if(self.__listPatients.get(dni) != None):
             patient = self.__listPatients[dni]
             historyList = patient.getVisits()
             return historyList
-        return None
+        return False
     
     def getPatients(self):
         return self.__listPatients
+
+
+    def addAppointment(self, dni, visit):
+        if(self.__listPatients.get(dni) != None):
+            patient = self.__listPatients[dni]
+            patient.setVisits(visit)
+            return True
+        return False

@@ -53,5 +53,9 @@ class PatientModel():
         return self.__visits
 
     def setVisits(self, visits):
-        self.__visits = visits
+        self.__visits.append(visits)
         self.__numberVisits += 1    
+
+    def __str__(self):
+        return "name: " + self.__name + "\n"+ "surname: " +self.__surname + "\n" + "birth: " + str(self.__birth) + "\n" + "tel: " + self.__tel + "\n" + "email: " + self.__email + "\n" + "number isits: " + str(self.__numberVisits)
+         

@@ -100,22 +100,27 @@ class PatientView():
         if option == 3:
             dni = readDNI()
             compr = ctrl.getPatientHistory(dni)
-            if(compr == None):
+            if(compr == False):
                 print("The patient hasn't had any hitory yet")
             else:
                 print(compr)
 
         if option == 4:
             print("List of patients")
+            print("-------------------------")
             patients = ctrl.getPatients()
-            for a in patients.keys():
+            for a, values in patients.items():
+                print("-------------------------")
                 print("Patient with DNI: ",a)
-                for e in a:
-                    print(e)
-
-
+                print(values)
+                
         if option == 5:
-            pass
+            dni = readDNI()
+            visit = input("Input the visit")
+            if(ctrl.addAppointment(dni,visit)):
+                print("Appointment created!!!")
+            else:
+                print("Error to create an appointment") 
     
         if option == 0:
             print("Succesfully exit!!")
