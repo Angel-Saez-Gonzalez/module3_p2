@@ -11,9 +11,14 @@ def readID():
             print("Invalid ID")
         
 def readDate():
-    date = datetime.now()
-    formatDate = date.strftime("%d/%m/%Y")
-    return formatDate
+    while True:
+        date = str(input("Put the date ex:02/05/2001"))
+        if(date.datetime.strptime(date, '%d/%m/%y')):
+            formatDate = date.strftime("%d/%m/%Y")
+            return formatDate
+            break
+        else:
+            return print("Format error")
 
 def readNIF():
     
@@ -62,9 +67,9 @@ while True:
         print("Add the lines of the invoice: ")
         lines = []
         while True:
-            product = #readProduct()
-            quantity = #readQuantity()
-            totalpro = #readTotalPro()
+            #product = readProduct()
+            #quantity = #readQuantity()
+            #totalpro = #readTotalPro()
             lines.append((product, quantity, totalpro))
             optionLines = int(input("To add line ---> 1 / to stop ---> 0: "))
             if optionLines == 0:
